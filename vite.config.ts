@@ -2,13 +2,14 @@
  * @Author: 大侠传授两招吧
  * @Date: 2022-05-25 21:08:33
  * @LastEditors: 大侠传授两招吧
- * @LastEditTime: 2022-05-26 13:43:02
+ * @LastEditTime: 2022-05-26 23:04:55
  * @Description: vite 配置
  */
 import vue from '@vitejs/plugin-vue';
 import { defineConfig, loadEnv } from 'vite';
 import styleImport, { VantResolve } from 'vite-plugin-style-import';
 import compressPlugin from 'vite-plugin-compression';
+import progress from 'vite-plugin-progress';
 
 const path = require('path');
 const NetworkIp = require('./networkIp.ts');
@@ -20,6 +21,7 @@ export default defineConfig(({ command, mode }) => {
     const isBuild = command === 'build';
     
     let plugins = [
+        progress(),
         vue(),
         styleImport({
             resolves: [VantResolve()],
@@ -39,7 +41,8 @@ export default defineConfig(({ command, mode }) => {
         plugins,
         resolve: {
             alias: {
-                '@': path.resolve(__dirname, 'src')
+                '@': path.resolve(__dirname, 'src'),
+                "@img": "/src/assets/images/",              //设置别名
             }
         },
         css: {
