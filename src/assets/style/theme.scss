@@ -1,0 +1,22 @@
+:root {
+    --primary-bgColor: transform;
+    --primary-bdColor: transform;
+    --primary-fontColor: transform;
+}
+$themes: (
+    light: (
+        primary-bgColor: #ffffff,
+        primary-fontColor: #f00,
+        primary-border: 1px solid #e5e5e5,
+    ),
+    dark: (
+        primary-bgColor: #1a1a1a,
+        primary-fontColor: #999999,
+        primary-border: 1px solid #000000,
+    ),
+    custom: (
+        primary-bgColor: var(--primary-bgColor),
+        primary-fontColor: var(--primary-fontColor),
+        primary-border: 1px solid var(--primary-bdColor),
+    )
+);

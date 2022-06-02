@@ -2,7 +2,7 @@
  * @Author: 大侠传授两招吧
  * @Date: 2022-05-25 21:08:33
  * @LastEditors: 大侠传授两招吧
- * @LastEditTime: 2022-05-26 23:04:55
+ * @LastEditTime: 2022-06-02 12:36:13
  * @Description: vite 配置
  */
 import vue from '@vitejs/plugin-vue';
@@ -53,7 +53,7 @@ export default defineConfig(({ command, mode }) => {
                         '@import "@/assets/scss/globalVariable1.scss";@import "@/assets/scss/globalVariable2.scss";'
                         这种格式
                     */
-                    additionalData: `@import "@/assets/style/global.scss";`
+                    additionalData: `@import "@/assets/style/mixin.scss";`
                 }
             }
         },
